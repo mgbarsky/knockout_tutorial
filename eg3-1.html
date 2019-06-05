@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Binding with KnockoutJS</title>
+    </head>
+    <body>
+        <ul>
+        <!-- ko foreach: books -->
+            <li data-bind="text: $data"></li>
+        <!-- /ko -->
+        </ul>
+        <script src = "lib/knockout-3.5.0.js" type = "text/javascript"></script>
+        
+        <script>
+            var viewModel = function() {
+                var self = this;
+                self.books = [
+                    'Rapid Application Development With CakePHP',
+                    '20 Recipes for Programming MVC 3: Faster, Smarter Web Development',
+                    '20 Recipes for Programming PhoneGap:Cross-Platform Mobile Development for Android and iPhone'
+                ];
+            };
+            ko.applyBindings(viewModel);
+        </script>
+    </body>
+</html>
